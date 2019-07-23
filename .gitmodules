@@ -1,0 +1,3 @@
+[submodule "xivapi.com"]
+	path = xivapi.com
+	url = https://github.com/xivapi/xivapi.com

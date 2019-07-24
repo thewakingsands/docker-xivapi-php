@@ -83,6 +83,16 @@ rm /tmp/composer-installer.php
 cd /vagrant
 composer install --no-scripts
 
+# nodejs and yarn
+curl -sL https://deb.nodesource.com/setup_12.x | bash -
+apt-get install -y nodejs
+curl -o- -L https://yarnpkg.com/install.sh | bash
+# encore
+cd /vagrant
+yarn
+yarn encore production
+rm -rf /vagrant/node_modules # remove node_modules to reduce image size; you can easily restore it using `yarn`
+
 #
 # Finish
 #

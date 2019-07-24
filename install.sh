@@ -84,7 +84,7 @@ cd /vagrant
 composer install --no-scripts
 
 # nodejs and yarn
-curl -sL https://deb.nodesource.com/setup_12.x | bash -
+curl -sL https://deb.nodesource.com/setup_10.x | bash -
 apt-get install -y nodejs
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -

@@ -65,7 +65,7 @@ sed -i 's|memory_limit = 128M|memory_limit = -1|' /etc/php/7.3/fpm/php.ini
 sed -i "s|www-data|$MY_USER|" /etc/php/7.3/fpm/pool.d/www.conf
 
 #
-# Redis
+# phpredis
 #
 echo "Installing: Redis"
 mkdir -p /src/phpredis
@@ -75,6 +75,13 @@ rm -rf /src/phpredis
 echo "extension=redis.so" > /etc/php/7.3/mods-available/redis.ini
 ln -sf /etc/php/7.3/mods-available/redis.ini /etc/php/7.3/fpm/conf.d/20-redis.ini
 ln -sf /etc/php/7.3/mods-available/redis.ini /etc/php/7.3/cli/conf.d/20-redis.ini
+
+# composer
+curl https://getcomposer.org/installer > /tmp/composer-installer.php
+php /tmp/composer-installer.php --install-dir=/usr/local/bin --filename=composer
+rm /tmp/composer-installer.php
+cd /vagrant
+composer install --no-scripts
 
 #
 # Finish

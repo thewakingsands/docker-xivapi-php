@@ -1,3 +1,6 @@
 [submodule "xivapi.com"]
 	path = xivapi.com
 	url = https://github.com/xivapi/xivapi.com
+[submodule "common-php"]
+	path = common-php
+	url = https://github.com/xivapi/common-php.git
